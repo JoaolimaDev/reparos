@@ -1,0 +1,20 @@
+
+require_once("PDO.php");
+
+
+
+
+$database = new Database;
+
+$conn = $database->connect("smart_gip_pecabostoagostinho");
+
+
+$periodo_inicial = "2021-09-27";
+
+
+if ($periodo_inicial !== "" || $periodo_final !== "") $myQuery = "$myQuery AND e.data >= '$periodo_inicial 00:00:00'
+AND e.data <= '$periodo_final 23:59:59'";
+
+
+$sql = "SELECT e.data FROM estoque as e AND e.data >= '$periodo_inicial 00:00:00'
+AND e.data <= '$periodo_final 23:59:59'";
